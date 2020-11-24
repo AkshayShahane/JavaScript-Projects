@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            padding: 200px;
+            padding-left: 500px;
+        }
+        #sub{
+            background-color: khaki;
+            width:500px;
+            height: 300px;
+            padding: 100px;
+            border:3px solid black;
+            outline: 5px solid green;
+        }
+        .heading{
+            margin-top: -50px;
+        }
+
+        body{
+            background-image:url("pic1.jpg");
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="sub">
+            <h2 class="heading">Count Numbers</h2>
+            <h1 class="text-center"><spna id="count">0</spna></h1>
+            <button id="addcount" class="btn btn-primary text-center">Add Count</button>
+            <button id="LowerCount" class="btn btn-primary text-center">Lower Count</button>
+            <button id="resetCount" class="btn btn-primary text-center">Reset</button>
+        </div>
+    </div>
+    <script>
+        let  uppercount=document.querySelector("#addcount");
+        let lowercount=document.querySelector("#LowerCount");
+        let resetcount=document.querySelector("#resetCount");
+        
+        let total=0;
+        addcount.addEventListener("click",upcount);
+        LowerCount.addEventListener("click",lowcount);
+       resetCount.addEventListener("click",reset);
+
+       function reset()
+       {
+          
+           count.innerText=0;
+       }
+        function changeColor()
+        {
+            if(total>0)
+            {
+                count.style.color="green";
+            }
+            else
+            {
+                count.style.color="red";
+            }
+        }
+        function upcount()
+        {
+            total++;
+            changeColor()
+            count.innerText=total
+        }
+        function lowcount()
+        {
+            total--;
+            changeColor()
+            count.innerText=total
+        }
+    </script>
+</body>
+</html>
