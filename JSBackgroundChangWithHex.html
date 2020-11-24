@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+    <style>
+        #container{
+            padding: 300px;
+            padding-left: 600px;
+        }
+        #para{
+           color:brown;
+        }
+    </style>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+   
+    <div class="jumbotron">
+        <p class="text-center" id='para'>This is our Background Change Project In JavaScript.</p>
+      </div>
+    <div id="container">
+
+        <h1>Hex color : <span id="hex-value"></span></h1><br><br>
+        <button id="btn" class="btn btn-primary">Click Me</button>
+    </div>
+    <script>
+        (function(){
+        const button=document.querySelector("#btn");
+        const body=document.querySelector("body");
+        const hexValues=[0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+        const value=document.querySelector("#hex-value");
+
+            button.addEventListener("click",changeHex);
+
+            function changeHex()
+            {
+                let hex="#";
+                for(let i=0;i<6;i++)
+                {
+                    const index=Math.floor(Math.random()*hexValues.length);
+                    hex+=hexValues[index];
+                }
+                value.textContent= hex;
+                body.style.background=hex;
+            }
+        })()
+    </script>
+</body>
+</html>
